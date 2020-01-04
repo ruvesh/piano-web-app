@@ -1,0 +1,64 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cornflowerblue;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descrip {
+    position: absolute;
+    top: 10px;
+    width: 50%;
+    text-align: justify;
+    color: white;
+    opacity: 0.6;
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.piano {
+    display: flex;
+}
+
+.key {
+    position: relative;
+    width: var(--width);
+    height: calc(var(--width) * 4);
+}
+
+.key b {
+    position: absolute;
+    bottom: 5px;
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.white.active {
+    background-color: #CCC;
+}
+
+.black {
+    --width: 60px;
+    --key_pos: calc(var(--width) / -2);
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin-left: var(--key_pos);
+    margin-right: var(--key_pos);
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+}
